@@ -1,4 +1,7 @@
 export default function uploadPhoto(filename) {
-    const error = new Error('${filename} cannot be empty');
-    return Promise.reject(error);
+    const response = new Promise((resolve, reject) => {
+        reject(Error(`${filename} cannot be processed`));
+    });
+
+    return response;
 }
