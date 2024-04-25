@@ -1,6 +1,11 @@
 export default function getResponseFromAPI() {
-  const promise = new Promise(() => {
-    //
+  const response = new Promise((resolve, reject) => {
+    resolve({
+      status: 200,
+    });
+    reject(Error('Failure'));
+    return response;
   });
-  return promise;
+
+  return response;
 }
