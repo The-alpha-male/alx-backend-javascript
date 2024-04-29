@@ -9,5 +9,4 @@ export async function getListStudents() {
         /* console.log(studentsToreturn) */
 
     return studentsToreturn
-
 }
