@@ -1,11 +1,13 @@
-export default function cleanSet(set, startString) {
-    const setArray = [...set];
+const cleanSet = (set, startString) => {
+    const strings = [];
 
-    if (startString === undefined || startString.length === 0) return '';
+    if (startString === '' || typeof startString !== 'string') return '';
+    set.forEach((s) => {
+        if (typeof s === 'string' && s.startsWith(startString)) {
+            strings.push(s.slice(startString.length));
+        }
+    });
+    return strings.join('-');
+};
 
-    return setArray
-        .filter((word) => (word !== undefined ? word.startsWith(startString) : ''))
-        .map((word) => (word !== undefined ? word.slice(startString.length) : ''))
-        .join('-');
-}
-
+export default cleanSet;
