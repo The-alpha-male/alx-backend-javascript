@@ -8,3 +8,4 @@ export default function cleanSet(set, startString) {
         .map((word) => (word !== undefined ? word.slice(startString.length) : ''))
         .join('-');
 }
+
